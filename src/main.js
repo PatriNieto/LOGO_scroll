@@ -1,3 +1,4 @@
+
 gsap.registerPlugin(ScrollTrigger);
 
 gsap.to("#nav1", {
@@ -51,25 +52,25 @@ gsap.from("#animatedText", {
   y: 100,
   duration: 1
 })
-
 let mm = gsap.matchMedia();
 
-mm.add("min-width: 100px",()=>{
+mm.add("(min-width: 1000px)", () => {
   gsap.to("#cuervos", {
-  duration: 1, 
-  opacity: 0, 
-  scale: 0.9,
-  ease: "power2.out",
-  scrollTrigger: {
-    trigger: "#cuervos",
-    start: "top 30%", // Cuando la parte superior del div llega al centro de la pantalla
-/*     end: "top 10%", // Termina la animación cuando el div está en el 10%
- */  scrub: 1, // Hace que la animación se vincule al scroll
-    pin: true, // Fija el div en su posición
-    anticipatePin: 1, // Reduce el "salto" al hacer pin
-  }
-}); 
-})
+    duration: 1,
+    opacity: 0,
+    scale: 0.9,
+    ease: "power2.out",
+    scrollTrigger: {
+      trigger: "#cuervos",
+      scroller: "[data-scroll-container]",
+      start: "top 30%",
+      scrub: 1,
+      pin: true,
+      anticipatePin: 1,
+    }
+  });
+});
+
 
 
 
