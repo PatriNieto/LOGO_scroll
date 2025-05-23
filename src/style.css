@@ -1,0 +1,294 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  font-family: Arial, sans-serif;
+  color: white;
+  overflow-x: hidden;
+  font-family: "ivypresto-display", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* Primera sección (debe estar en flujo normal) */
+.hero {
+  width: 100%;
+  height: 100vh;
+  background: url('https://source.unsplash.com/1600x900/?nature,landscape') center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  background-color: salmon;
+  position: relative;
+  top: 0;
+  left: 0;
+  z-index: 1; /* Debe estar por debajo de las demás secciones */
+  opacity: 1;
+  overflow: hidden;
+
+}
+
+.sobre {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  z-index: 2;
+}
+
+.sobre .video-background {
+}
+
+.sobre .video-background video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; 
+
+}
+
+.sobre .content {
+  position: relative;
+  z-index: 1; /* El contenido estará encima del video */
+  text-align: center;
+  padding: 20px;
+}
+.sobreIn{
+  min-height: 100vh;
+}
+
+#nav, #nav2 {
+  width: 100%;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0);
+  position: sticky; /* Inicialmente en posición absoluta */
+  left: 0;
+  transition: top 0.3s ease-in-out;
+}
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  padding: 0;
+  margin: 0;
+}
+
+nav ul li {
+  padding: 10px 20px;
+  font-size: 18px;
+  cursor: pointer;
+  color: white;
+}
+
+nav ul li:hover {
+  color: salmon; /* Efecto hover opcional */
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: auto;
+  padding: 50px 0; /* Añade un margen superior e inferior */
+
+}
+h1{
+  font-family: "ivypresto-display", serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+/* Secciones intermedias que deben cubrir el Hero */
+.scrolling-section, .last-section {
+  position: relative;
+  background: #111;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 2; /* Se colocan por encima del hero */
+}
+
+#sec1 {
+  background-color: antiquewhite;
+  color:#111;
+  width: 100%;
+  height: 400vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.sec1in {
+  width: 100%;
+  height:100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.medias p, .medias h2 {
+  padding: 10px;
+}
+
+#sec1 p, #sec1 h2 {
+}
+.parallax {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.parallax img {
+  width: 100%;
+  height: 100%; /* Asegura que la imagen ocupe todo el contenedor */
+  object-fit: cover;
+}
+
+
+
+.parallax-text {
+  position: relative;
+  font-size: 3rem;
+  color: white;
+  opacity: 0.6;
+}
+.containerCuatro{
+  width: 100%;
+  height: 100vh;
+  display:flex;
+  flex-wrap: wrap;
+
+}
+.cuarto img {
+  width: 50%;
+  height: auto;
+}
+.cuarto {
+  height: 100%;
+  background-color: antiquewhite;
+  color: #111;
+  width:40%;
+}
+
+.medias{
+  display: flex;
+  flex-direction: row;
+  max-width: 1366px;
+  justify-content: space-evenly;
+
+}
+
+.medias img {
+  position: relative;
+
+}
+/* Última sección con efecto de subida */
+.last-section {
+  background: url('https://i1.adis.ws/i/canon/get-inspired-landscape-photography-tips-1-16.9_e7ae10efb78c4526801d6037f80ab177?$hero-header-half-16by9-dt-jpg$') center/cover no-repeat;
+  z-index: 3;
+}
+
+/* Footer fijo que se revela */
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 500px;
+  background: black;
+  color: white;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 0; /* Debe estar debajo */
+  background-color: salmon;
+}
+
+#nav2 {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000; 
+  display: none;
+}
+
+.texto{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 50vh;
+  padding: 100px;
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+.texto h3{
+  font-size: 5em;
+}
+
+.texto p{
+  font-size: 2em;
+}
+
+.seccion {
+  background-color: aqua;
+  width: 100%;
+  height: 400vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.mitad {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 100px;
+  text-align: left;
+  
+}
+.mitadTexto {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: left;
+}
+
+.mitad img {
+  width: 40%;
+  padding: 100px;
+
+}
+
+.cuart{
+  display: flex;
+  flex-wrap: wrap;
+}
+.card{
+  display: flex;
+  flex-direction: column;
+width: 40%;
+
+}
