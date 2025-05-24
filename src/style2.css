@@ -536,10 +536,10 @@ html.has-scroll-smooth {
 
       @media (max-width: 640px){
         #div1{
-          font-size: 1.4em;
+          font-size: 1em;
         }
         #subDiv1 {
-          top: 30%;
+          top: 20%;
           
         }
         #logo {
