@@ -1,4 +1,3 @@
-
 gsap.registerPlugin(ScrollTrigger);
 
 gsap.to("#nav1", {
