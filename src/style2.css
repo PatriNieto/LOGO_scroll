@@ -535,8 +535,12 @@ html.has-scroll-smooth {
 
 
       @media (max-width: 640px){
+        #div1{
+          font-size: 1.4em;
+        }
         #subDiv1 {
           top: 30%;
+          
         }
         #logo {
 
@@ -560,11 +564,23 @@ html.has-scroll-smooth {
         .navLinks {
           display:none;
         }
+
+        #future{
+          padding: 15px;
+          padding-top: 40px;
+        }
+        #future p {
+          margin-top: 20px;
+        }
+        #future h1 {
+          margin-top: 50px;
+        }
+   
 #footer {
-  font-size: 1.8em;
+  font-size: 1em;
 }
   #cuervos {
-    padding: 15px 10px;
+    padding: 15px 10px; 
   }
   
   .cuervoDiv {
