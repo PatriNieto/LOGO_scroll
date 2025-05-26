@@ -70,9 +70,9 @@
                                 <li 
                                 id="logo" 
                                 class="text-3xl">LOGO</li>
-                                <img
-                                id="menuLogo"
-                                class="w-10 hidden" src="./public/cuervoBlanco.png" alt="">
+                                <!-- Botón para abrir el menú -->
+                        <button id="openMenuBtn" class="md:hidden text-white text-3xl  z-50">&#9776;</button>
+
                             </div>
                             <div
                             class="navLinks">
@@ -83,6 +83,25 @@
                             </ul>
                         </div>
                     </nav>
+           
+
+<!-- Menú desplegable -->
+<nav id="mobileMenu" class="hidden fixed inset-0 bg-black text-white flex-col items-center justify-center space-y-8 text-2xl z-40 md:hidden">
+  <!-- Botón para cerrar -->
+  <button id="closeMenuBtn" class="absolute top-4 right-4 text-white text-3xl">&times;</button>
+
+  <!-- Enlaces del menú -->
+  <a href="#">ABOUT</a>
+  <a href="#">MOMENTS</a>
+  <a href="#">SPACES</a>
+  <a href="#">PEOPLE</a>
+  <a href="#">CONTACT</a>
+  <a href="#">APPLY</a>
+</nav>
+
+
+                    
+
 
                     <div class="main-content"> 
             <div>
@@ -99,10 +118,12 @@
                             class="logo">
                                 <li 
                                 id="logo" 
-                                class="text-3xl">LOGO</li>
+                                class="text-3xl" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">LOGO</li>
                                 <img
                                 id="menuLogo"
                                 class="w-10 hidden" src="./public/cuervoBlanco.png" alt="">
+                             
+
                             </div>
                         <div
                         class="navLinks">
@@ -124,7 +145,7 @@
             id="div2">
 
                 
-                    <div class="video-background" h-screen>
+                    <div class="video-background" >
                     <video autoplay loop muted playsinline id="myVideo">
                         <source src="./public/videoBG_lowRes.mp4" type="video/mp4">
                         Tu navegador no soporta videos.
@@ -512,6 +533,23 @@
             <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
             <script type="module" src="/src/main.js"></script>
             <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@beta/bundled/locomotive-scroll.min.js"></script>
+
+
+
+  <script>
+  const mobileMenu = document.getElementById("mobileMenu");
+  const openBtn = document.getElementById("openMenuBtn");
+  const closeBtn = document.getElementById("closeMenuBtn");
+
+  openBtn.addEventListener("click", () => {
+    mobileMenu.classList.remove("hidden");
+  });
+
+  closeBtn.addEventListener("click", () => {
+    mobileMenu.classList.add("hidden");
+  });
+</script>
+
             <script>
 document.addEventListener('DOMContentLoaded', function() {
   const scroll = new LocomotiveScroll({
@@ -520,8 +558,6 @@ document.addEventListener('DOMContentLoaded', function() {
     multiplier: 1, 
   });
 
-  
-  
   // Evento del botón con verificación de elemento objetivo
   document.getElementById('scrollBtn').addEventListener('click', function(e) {
     e.preventDefault();
@@ -532,7 +568,6 @@ document.addEventListener('DOMContentLoaded', function() {
       return;
     }
 
-    // Opción 1: Usando Locomotive Scroll con easing estándar
     scroll.scrollTo(target, {
       offset: 0,
       duration: 1.2, // Duración más corta
@@ -545,13 +580,14 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
 
-  // Muestra el prompt después de cargar
+  // Muestra el prompt de scroll
   setTimeout(() => {
     const prompt = document.getElementById('scrollPrompt');
     if (prompt) prompt.classList.add('opacity-100');
   }, 500);
 });
-// Añade este evento para permitir clics en enlaces
+
+
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', function(e) {
     e.preventDefault();
@@ -559,15 +595,27 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   });
 });
 
-// Para enlaces externos (como los de tu footer)
+
 document.querySelectorAll('a[href^="http"]').forEach(anchor => {
   anchor.addEventListener('click', function(e) {
-    // Permite que estos enlaces funcionen normalmente
-    // Locomotive no interferirá con ellos
+   
   });
 });
             </script>
-
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    let counter = document.querySelector(".counter");
+    let count = 3;
+    const interval = setInterval(() => {
+      count--;
+      counter.textContent = count;
+      if (count === 0) {
+        clearInterval(interval);
+        document.getElementById("preloader").style.display = "none";
+      }
+    }, 1000);
+  });
+</script>
   
         </body>
         </html>
